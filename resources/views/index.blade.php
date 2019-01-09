@@ -52,6 +52,8 @@
         <span class="icon-bar"></span>
       </a>
 
+      
+
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
           <!-- Messages: style can be found in dropdown.less-->
@@ -203,17 +205,7 @@
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
-      <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
-      <!-- /.search form -->
+      
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
@@ -394,27 +386,37 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+
+
+
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
-        Fixed Layout
-        <small>Blank example to the fixed layout</small>
-      </h1>
-      
+
+      <div class="row">
+        <div class="col-md-6">
+            <!-- search form -->
+            <form action="#" method="get">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                    <span class="input-group-btn">
+                      <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                      </button>
+                    </span>
+              </div>
+            </form>
+            <!-- /.search form -->      
+        </div>
+        <div class="col-md-6"></div>
+      </div>
+
     </section>
 
     <!-- Main content -->
     <section class="content">
-      <div class="callout callout-info">
-        <h4>Tip!</h4>
-
-        <p>Add the fixed class to the body tag to get this layout. The fixed layout is your best option if your sidebar
-          is bigger than your content because it prevents extra unwanted scrolling.</p>
-      </div>
+    
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title">Title</h3>
 
           <div class="box-tools pull-right">
             <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -427,10 +429,6 @@
           Start creating your amazing application!
         </div>
         <!-- /.box-body -->
-        <div class="box-footer">
-          Footer
-        </div>
-        <!-- /.box-footer-->
       </div>
       <!-- /.box -->
 
