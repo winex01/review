@@ -16,6 +16,21 @@
       <span class="icon-bar"></span>
     </a>
 
-    @include('layouts.profile')
+   <div class="navbar-custom-menu">
+      <ul class="nav navbar-nav">
+          @auth
+            @include('layouts.profile')
+          @else
+            <li>
+              <a href="{{ route('login') }}">{{ __('Login') }}</a>
+            </li>
+
+            <li>
+              <a href="{{ route('register') }}">{{ __('Register') }}</a>
+            </li>
+          @endauth
+      </ul>
+    </div>
+
   </nav>
 </header>
