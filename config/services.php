@@ -40,4 +40,10 @@ return [
         ],
     ],
 
+    'facebook' => [
+        'client_id' => '1999303886843953',
+        'client_secret' => '24ff4439ee5eb65b64010982640e6bb6',
+        'redirect' => 'http://review.test/login/facebook/callback',
+    ],
+
 ];
