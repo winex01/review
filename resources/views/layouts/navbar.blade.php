@@ -31,6 +31,5 @@
           @endauth
       </ul>
     </div>
-
   </nav>
 </header>

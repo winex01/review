@@ -1,5 +1,9 @@
 <?php
 
+Route::get('login2', function() {
+	return view('auth.login2');
+});
+
 Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
