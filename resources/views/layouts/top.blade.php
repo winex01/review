@@ -18,6 +18,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ asset('adminlte/dist/css/skins/_all-skins.min.css') }}">
   <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/custom.css') }}">
 
   @if (url()->current() == route('login'))
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/iCheck/square/blue.css') }}">
