@@ -25,8 +25,7 @@
 	</script>
 @endif
 
-
-@stack('scripts')
+@stack('js')
 
 </body>
 </html>
