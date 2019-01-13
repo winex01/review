@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="container-fluid">
-	<div class="row">
+    
+   <div class="row">
 		<div class="col-md-3">
-			<img src="{{ url('images/Screenshot_1.png') }}" class="img-thumbnail" alt="Responsive image">
+			<img src="{{ url('images/default.jpg') }}" class="img-responsive" alt="no photo">
 			<strong>School Management System</strong>
 			<br/>
 			<a href="#">JohnDoe</a>
@@ -13,7 +14,7 @@
 			85K views • 1 week ago
 		</div>
 		<div class="col-md-3">
-			<img src="{{ url('images/Screenshot_2.png') }}" class="img-thumbnail" alt="Responsive image">
+			<img  src="{{ url('images/sample1.png') }}" class="img-responsive" alt="Responsive image">
 			<strong>Points of Sales</strong>
 			<br/>
 			<a href="#">Renegade</a>
@@ -21,7 +22,7 @@
 			2.5M views • 2 years ago
 		</div>
 		<div class="col-md-3">
-			<img src="{{ url('images/Screenshot_3.png') }}" class="img-thumbnail" alt="Responsive image">
+			<img src="{{ url('images/sample2.png') }}" class="img-thumbnail" alt="Responsive image">
 			<strong>PHP sample ajax request</strong>
 			<br/>
 			<a href="#">DarkMage</a>
@@ -38,7 +39,7 @@
 		</div>
 	</div>
 
-<hr>
+	<hr>
 
 	<div class="row">
 		<div class="col-md-3">
@@ -74,6 +75,7 @@
 			903K views • 11 months ago
 		</div>
 	</div>
+   
 </div>
 <ul class="pagination">
 	<li><a href="#">&laquo;</a></li>
