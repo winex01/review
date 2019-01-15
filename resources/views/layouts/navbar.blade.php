@@ -19,7 +19,7 @@
    <div class="navbar-custom-menu">
       <ul class="nav navbar-nav">
           @auth
-            @include('layouts.profile')
+            @include('partials.user-profile')
           @else
             <li>
               <a href="{{ route('login') }}">{{ __('Login') }}</a>

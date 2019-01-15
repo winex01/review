@@ -10,6 +10,7 @@ Route::get('login2', function() {
 });
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/project/{project}', 'ProjectController@show')->name('project');
 
 Auth::routes();
 
