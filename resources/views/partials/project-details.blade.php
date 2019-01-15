@@ -3,7 +3,7 @@
 		<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
 	</div>
 	<strong>
-		<a class="project-title" title="{{ $project->title }}" href="{{ route('project', $project->id) }}">
+		<a class="project-title" title="{{ $project->title }}" href="{{ route('project', [$project->id, str_replace(' ', '-', $project->title)]) }}">
 			{{ $project->title }}
 		</a>
 	</strong>
