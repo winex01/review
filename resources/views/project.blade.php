@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-	<div class="col-md-8">
+	<div class="col-md-7">
 		<img src="{{ url($project->image) }}" class="img-responsive img-thumbnail" alt="Image">
 		<strong>{{ $project->title }}</strong>
 		<div class="row">
@@ -26,13 +26,28 @@
 			{{ $project->description }}
 		</p>
 	</div>
-	<div class="col-md-4">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<div class="col-md-5">
+		@foreach($random as $project)
+			<div class="row">
+				<div class="col-md-6">
+					<div class="random-project-thumbnail">
+						<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
+					</div>
+				</div>
+				<div class="col-md-6">
+					<strong>
+						<a class="project-title" title="{{ $project->title }}" href="{{ route('project', [$project->id, str_replace(' ', '-', $project->title)]) }}">
+							{{ $project->title }}
+						</a>
+					</strong>
+					<br/>
+					<a href="#">{{ $project->owner->name }}</a>
+					<br>
+					889K views • {{ $project->created_at->diffForHumans() }}
+				</div>
+			</div>
+			<hr>
+		@endforeach
 	</div>
 </div>
 	

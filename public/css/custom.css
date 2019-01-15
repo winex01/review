@@ -13,6 +13,10 @@
     /*width:100%;*/
 }
 
+.random-project-thumbnail img {
+    height:115px;
+}
+
 .project-thumpbnail {
 	margin-bottom: 5px;
 }

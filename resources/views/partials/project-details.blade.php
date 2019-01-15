@@ -10,5 +10,5 @@
 	<br/>
 	<a href="#">{{ $project->owner->name }}</a>
 	<br>
-	889K views • 3 weeks ago
+	889K views • {{ $project->created_at->diffForHumans() }}
 </div>
