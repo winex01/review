@@ -12,7 +12,7 @@
 					<div class="project-thumpbnail thumbnail">
 						<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
 					</div>
-					<strong>{{ $project->title }}</strong>
+					<strong><a class="project-title" title="{{ $project->title }}" href="#">{{ $project->title }}</a></strong>
 					<br/>
 					<a href="#">{{ $project->owner->name }}</a>
 					<br>
@@ -30,7 +30,7 @@
 					<div class="project-thumpbnail thumbnail">
 						<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
 					</div>
-					<strong>{{ $project->title }}</strong>
+					<strong><a class="project-title" title="{{ $project->title }}" href="#">{{ $project->title }}</a></strong>
 					<br/>
 					<a href="#">{{ $project->owner->name }}</a>
 					<br>

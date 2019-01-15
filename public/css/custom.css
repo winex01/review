@@ -16,3 +16,10 @@
 .project-thumpbnail {
 	margin-bottom: 5px;
 }
+
+.project-title{
+	color: #000000;
+}
+.project-title:hover {
+	color: #808080;
+}
