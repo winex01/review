@@ -14,6 +14,7 @@
         "laravel/socialite": "^4.0",
         "laravel/telescope": "^1.0",
         "laravel/tinker": "^1.0",
+        "watson/active": "^3.0",
         "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {

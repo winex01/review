@@ -5,16 +5,16 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
 
-        <li class="active">
-            <a href="https://adminlte.io/docs"><i class="fa fa-home"></i> <span>Home</span></a>
+        <li class="{{ active(['home', 'project/*', 'not:project/create']) }}">
+            <a href="{{ route('home') }}"><i class="fa fa-home"></i> <span>{{ __('Home') }}</span></a>
         </li>
 
         <li>
             <a href="https://adminlte.io/docs"><i class="fa fa-fire"></i> <span>Trending</span></a>
         </li>
 
-        <li>
-            <a href="https://adminlte.io/docs"><i class="fa fa-upload"></i> <span>Submit Code</span></a>
+        <li class="{{ active('project.create') }}">
+            <a href="{{ route('project.create') }}"><i class="fa fa-upload"></i> <span>{{ __('Submit Code') }}</span></a>
         </li>
 
         <li class="header">PROGRAMMING</li>

@@ -20,4 +20,17 @@ class ProjectController extends Controller
 
         return view('project', compact('project', 'random'));
     }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+        $random = Project::orderByRaw('RAND()')->take(10)->get();
+        
+        return view('project.create', compact('random'));
+    }
+    
 }
