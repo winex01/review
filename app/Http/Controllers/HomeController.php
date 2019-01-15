@@ -24,7 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projects = Project::paginate(8);
+        $projects = Project::latest('id')->paginate(8);
 
         return view('home', compact('projects'));
     }
