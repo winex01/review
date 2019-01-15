@@ -10,7 +10,7 @@
 		    @endif
 				<div class="col-md-3 portfolio-item">
 					<div class="project-thumpbnail thumbnail">
-						<img src="{{ url('images/default.jpg') }}" class="img-responsive" alt="no photo">
+						<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
 					</div>
 					<strong>{{ $project->title }}</strong>
 					<br/>
@@ -28,7 +28,7 @@
 		    @endif
 				<div class="col-md-3 portfolio-item">
 					<div class="project-thumpbnail thumbnail">
-						<img src="{{ url('images/default.jpg') }}" class="img-responsive" alt="no photo">
+						<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
 					</div>
 					<strong>{{ $project->title }}</strong>
 					<br/>
