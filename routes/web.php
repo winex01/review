@@ -15,6 +15,7 @@ Route::get('/project/{project}/select', 'ProjectController@show')->name('project
 Auth::routes();
 Route::middleware('auth')->group(function () {
 	Route::get('/project/create', 'ProjectController@create')->name('project.create');
+	Route::post('/project/store', 'ProjectController@store')->name('project.store');
 });
 
 

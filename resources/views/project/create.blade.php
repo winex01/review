@@ -3,6 +3,8 @@
 
 <div class="row">
 	<div class="col-md-7">
+		@include('flash::message')
+		@include('partials.errors')
 		<div class="box box-info">
 			<div class="box-header">
 			  <h3 class="box-title">{{ __('Create Project') }}
@@ -21,10 +23,26 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body pad">
-			  <form>
-			        <textarea id="description" name="description" rows="10" cols="80">
-			        	{{ __('Write description and how to use or install the application.') }}
-			        </textarea>
+			  <form method="POST" action="{{ route('project.store') }}">
+			  	@csrf
+			  	<div class="form-group">
+                  <label for="title">{{ __('Title') }}</label>
+                  <input type="text" class="form-control" id="title" name="title" placeholder="Enter Title" value="{{ old('title') }}">
+                </div>
+		        <div class="form-group">
+				  <label for="description">{{ __('Description') }}</label>
+				  <textarea class="form-control" id="description" name="description" rows="10" cols="80">
+		        	@if(old('description'))
+		        		{{ old('description') }}
+		        	@else
+		        		{{ __('Write description and how to use or install the application.') }}
+		        	@endif
+		          </textarea>
+				</div>
+
+				<div class="pull-right">
+					<button type="submit" class="btn btn-primary">{{ __('Submit Code') }}</button>
+				</div>
 			  </form>
 			</div>
 		</div>

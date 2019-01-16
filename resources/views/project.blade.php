@@ -23,7 +23,7 @@
 		</div>
 		<hr>
 		<p>
-			{{ $project->description }}
+			{!! $project->description !!}
 		</p>
 	</div>
 	<div class="col-md-5">

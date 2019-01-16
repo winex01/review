@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Project;
 use Illuminate\Http\Request;
 
@@ -31,6 +32,27 @@ class ProjectController extends Controller
         $random = Project::orderByRaw('RAND()')->take(10)->get();
         
         return view('project.create', compact('random'));
+    }
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        //
+        $user = User::findOrFail(auth()->user()->id);
+        $user->projects()->create(
+            $request->validate([
+                'title' => 'required|max:255',
+                'description' => 'required|min:100',
+            ])
+        );
+    
+        flash('Created Successfully!');
+
+        return back();
     }
     
 }
