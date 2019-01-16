@@ -18,6 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('image')->default('images/default.jpg');
+            $table->string('code')->nullable();
             $table->timestamps();
 
             $table->unsignedInteger('user_id');

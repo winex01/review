@@ -23,7 +23,7 @@
 			</div>
 			<!-- /.box-header -->
 			<div class="box-body pad">
-			  <form method="POST" action="{{ route('project.store') }}">
+			  <form method="POST" action="{{ route('project.store') }}" enctype="multipart/form-data">
 			  	@csrf
 			  	<div class="form-group">
                   <label for="title">{{ __('Title') }}</label>
@@ -39,6 +39,12 @@
 		        	@endif
 		          </textarea>
 				</div>
+				
+				<div class="form-group">
+                  <label for="code">{{ __('Code File') }}</label>
+                  <input type="file" id="code" name="code">
+                  <p class="help-block">{{ __('Files must be less than 50 MB / 50,000 KB (zip, rar)') }}</p>
+                </div>
 
 				<div class="pull-right">
 					<button type="submit" class="btn btn-primary">{{ __('Submit Code') }}</button>
