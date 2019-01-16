@@ -41,18 +41,19 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
-        $user = User::findOrFail(auth()->user()->id);
-        $user->projects()->create(
-            $request->validate([
-                'title' => 'required|max:255',
-                'description' => 'required|min:100',
-                'code' => 'required|file|mimes:zip,rar|max:50000', #50000 = 50MB
-            ])
+        $inputs = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required|min:100',
+            'code' => 'required|file|mimes:zip,rar|max:50000', #50000 = 50MB
+        ]);
+        
+        $inputs = array_prepend(
+            $inputs, $request->file('code')->store('projects'), 'code'
         );
-    
-        flash('Created Successfully!');
-
+        
+        $user = User::findOrFail(auth()->user()->id);
+        $user->projects()->create($inputs);
+        flash(__('Code Submitted Successfully!'));
         return back();
     }
     
