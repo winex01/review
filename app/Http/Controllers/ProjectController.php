@@ -45,12 +45,16 @@ class ProjectController extends Controller
             'title' => 'required|max:255',
             'description' => 'required|min:100',
             'code' => 'required|file|mimes:zip,rar|max:50000', #50000 = 50MB
+            'image' => 'required|file|mimes:jpg,jpeg,png|max:2000', #2MB
         ]);
         
         $inputs = array_prepend(
             $inputs, $request->file('code')->store('projects'), 'code'
         );
-        
+        $inputs = array_prepend(
+            $inputs, $request->file('image')->store('images'), 'image'
+        );
+
         $user = User::findOrFail(auth()->user()->id);
         $user->projects()->create($inputs);
         flash(__('Code Submitted Successfully!'));

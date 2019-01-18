@@ -2,7 +2,7 @@
 <div class="row">
 	<div class="col-md-6">
 		<div class="random-project-thumbnail">
-			<img src="{{ url($project->image) }}" class="img-responsive" alt="no photo">
+			<img src="{{ empty($project->image) ?  asset('images/default.jpg') : asset('storage/' . $project->image) }}" class="img-responsive" alt="no photo">
 		</div>
 	</div>
 	<div class="col-md-6">

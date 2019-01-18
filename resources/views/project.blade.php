@@ -4,7 +4,7 @@
 
 <div class="row">
 	<div class="col-md-7">
-		<img src="{{ url($project->image) }}" class="img-responsive img-thumbnail" alt="Image">
+		<img src="{{ empty($project->image) ?  asset('images/default.jpg') : asset('storage/' . $project->image) }}" class="img-responsive" alt="no photo">
 		<strong>{{ $project->title }}</strong>
 		<div class="row">
 			<div class="col-md-6">

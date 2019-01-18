@@ -40,7 +40,13 @@
 		          </textarea>
 				</div>
 				
-				<div class="form-group">
+				<div class="form-group col-md-6">
+                  <label for="image">{{ __('Cover Image File') }}</label>
+                  <input type="file" id="image" name="image">
+                  <p class="help-block">{{ __('Files must be less than 2 MB / 2,000 KB (jpg, jpeg, png)') }}</p>
+                </div>
+
+                <div class="form-group col-md-6">
                   <label for="code">{{ __('Code File') }}</label>
                   <input type="file" id="code" name="code">
                   <p class="help-block">{{ __('Files must be less than 50 MB / 50,000 KB (zip, rar)') }}</p>
