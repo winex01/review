@@ -26,8 +26,8 @@ class ProjectStoreRequest extends FormRequest
         return [
             'title' => 'required|max:255',
             'description' => 'required|min:100',
-            'code' => 'required|file|mimes:zip,rar|max:50000', #50000 = 50MB
             'image' => 'required|file|mimes:jpg,jpeg,png|max:2000', #2MB
+            'code' => 'required|file|mimes:zip,rar|max:50000', #50000 = 50MB
         ];
     }
 }

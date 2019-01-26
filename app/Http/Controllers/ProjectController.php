@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProjectStoreRequest;
 use App\Project;
-use App\User;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -42,17 +41,16 @@ class ProjectController extends Controller
      */
     public function store(ProjectStoreRequest $request)
     {
-        $inputs = $request->validate();
-        
-        $inputs = array_prepend(
-            $inputs, $request->file('code')->store('projects'), 'code'
-        );
-        $inputs = array_prepend(
-            $inputs, $request->file('image')->store('images'), 'image'
-        );
+        $request->validated();
 
-        $user = User::findOrFail(auth()->user()->id);
-        $user->projects()->create($inputs);
+        Project::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $request->file('image')->store('images'),
+            'code' => $request->file('code')->store('projects'),
+            'user_id' => auth()->user()->id
+        ]);
+
         flash(__('Code Submitted Successfully!'));
         return back();
     }
